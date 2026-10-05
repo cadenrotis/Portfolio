@@ -161,6 +161,10 @@ footer {
     margin: 4px 0 12px;
 }
 
+.job li + li {
+    margin-top: 8px;
+}
+
 #not-found {
     flex: 1;
     display: flex;
