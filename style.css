@@ -135,6 +135,17 @@ footer {
     margin-top: 4px;
 }
 
+.job-logo {
+    display: block;
+    margin: 12px 0 0;
+    max-width: 240px;
+}
+
+.job-logo img {
+    width: 100%;
+    display: block;
+}
+
 .job {
     margin-bottom: 30px;
     border-left: 3px solid #333;
