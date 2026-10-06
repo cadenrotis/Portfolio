@@ -366,3 +366,9 @@ footer {
 .contact-info a:hover {
     text-decoration: underline;
 }
+
+.contact-icon {
+    display: block;
+    margin: 0 auto 12px;
+    max-width: 450px;
+}
