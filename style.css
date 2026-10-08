@@ -205,7 +205,6 @@ footer {
 }
 
 #hero .subtitle {
-    font-family: 'Courier New', Courier, monospace;
     color: brown;
     font-size: 1em;
     margin: 0 0 20px;
@@ -215,7 +214,6 @@ footer {
     max-width: 680px;
     margin: 0 auto;
     line-height: 1.6;
-    color: #444;
 }
 
 /* --- Site Guide Cards --- */
