@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/Website/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicon.png">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <title>Caden Otis - Projects</title>
+    <meta name="description" content="Personal and academic engineering projects by Caden Otis, spanning embedded systems, firmware, and electrical engineering.">
+    <meta name="author" content="Caden Otis">
+    <link rel="canonical" href="https://cadenrotis.github.io/Website/projects/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Caden Otis - Projects">
+    <meta property="og:description" content="Personal and academic projects by Caden Otis.">
+    <meta property="og:url" content="https://cadenrotis.github.io/Website/projects/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Caden Otis">
+    <meta property="og:image" content="https://cadenrotis.github.io/Website/images/profile.jpg">
+
+    <!-- Twitter/X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caden Otis - Projects">
+    <meta name="twitter:description" content="Personal and academic projects by Caden Otis.">
+    <meta name="twitter:image" content="https://cadenrotis.github.io/Website/images/profile.jpg">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="experience/">Experience</a></li>
+                <li><a href="skills/">Skills</a></li>
+                <li><a href="projects/" class="active">Projects</a></li>
+                <li><a href="honors/">Honors</a></li>
+                <li><a href="contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Project 1: Creating a personal portfolio</h3>
+            <p> 
+                My first project is related to developing a single Web page to create my personal portfolio for the 
+                COMS 3190: Construction of User interfaces course at Iowa State University. For this project, I
+                primarily used the basics of HTML and CSS to create my webpage. The project consisted of
+                creating a single web page with a menu at the top, known as the
+                "Navigation Bar". We also had to include text describing ourself and
+                text describing the various projects that we've done. Additionally, we needed to include
+                two images: one image is of ourself and a second image of anything
+                related to the project itself.
+            </p>
+            <p>
+                I have expanded on this project to make this website (what you're currently viewing right now). 
+                I have added multiple webpages, exploring both my academic and professional experiences. I have
+                also improved the styling and organization of this website with my more advanced knowledge of HTML and CSS 
+                that I have picked up from schooling and work.
+            </p>
+            <img src="./images/project1.png" alt="CSS3 and HTML5 logos">
+        </div>
+
+        <div class="project">
+            <h3>Project 2: Recreation of the Wordle Game</h3>
+            <p>My second project was using the C programming language to recreate the famous Wordle game. The goal was to
+                recreate the Wordle game so that it could be played through a text console and to make our own twist
+                to the game. With my version of Wordle, there are two difficulties that you can pick from: easy mode or
+                hard mode. The easy difficulty is just the regular Wordle game. The hard difficulty is mainly like the
+                Wordle game but once you guess the letters of the correct word, then you have to use those letters for
+                your next guesses.
+            </p>
+            <p>
+                To complete this project, everything that my team and I learned in the EE 2850: Problem Solving Methods and Tools for Electrical Engineering 
+                course at Iowa State University was needed, which was the basics of C programming. My role for this project was to 
+                set up the prompts that the game tells the player, manage how players input guesses, and set up the part of the code that checks if 
+                the letters within the guessed words are in the correct word and/or if the guessed word is correct overall. By doing
+                this project, I learned how to debug code more efficiently and how to code with a group of people.
+            </p>
+            <p>
+                By what I learned by completing this project, it will benefit me when I work on the software side of
+                embedded systems. The code required for embedded systems is much more detailed and tedious than the
+                code used for this project, but doing this project has helped me to navigate code for embedded
+                systems.
+            </p>
+            <img src="./images/project2.png" alt="Terminal screenshot of the Wordle game showing guessed letters and a win summary">
+        </div>
+
+        <div class="project">
+            <h3>Project 3: Temperature Sensor</h3>
+            <p>
+                My third project was for a lab in the EE 2300: Electronic Circuits and Systems course at Iowa State University, 
+                where my lab partner and I had the requirements to make a temperature sensor out of op-amps, resistors, and LEDs, 
+                and certain LEDs would turn on and off depending on what temperature the environment was at.
+            </p>
+            <p>
+                In order to complete this project, knowledge of comparator, inverting, and non-inverting op-amps was
+                needed, as well as basic circuit analysis and circuit wiring skills. My role for this project was to
+                build the whole circuit and test voltage and current for different temperatures to make sure our circuit
+                worked, while my lab partner created the schematic of our circuit and did the math for what resistor
+                values we would need to use. By doing this project, I learned what a comparator op-amp and hysteresis
+                are, how to use LTSpice to better analyze circuit behavior, and how crucial it is to test each part of
+                the circuit after changes or improvements are made.
+            </p>
+            <p>
+                The importance of doing this project is that I now have a better understanding of how op amps can work
+                in a circuit, which will be useful when working with electronics that utilize op-amps. This project also
+                somewhat simulated a real-life scenario of being given a problem to solve with design constraints, where
+                you are left to come up with a working design, so I was given a taste of what I can expect in the
+                engineering field.
+            </p>
+            <img src="./images/project3.png" alt="Breadboard temperature sensor circuit with lit LEDs, shown from overhead and at an angle">
+        </div>
+
+        <div class="project">
+            <h3>Project 4: Single-Cycle Processor</h3>
+            <p>
+                My fourth project was done for the CPRE 3810: Computer Organization and Assembly Level Programming 
+                class at Iowa State University. The goal was to design and implement a processor that can fetch, decode, and 
+                execute MIPS assembly instructions, with each instruction being executed per clock cycle.
+            </p>
+            <p>
+                I utilized VHDL to implement the digital logic architecture of the processor and QuestaSim to simulate
+                its behavior. This project gave me deep insight into how CPUs work at the hardware level, from the
+                datapath and control unit to register files and ALU operations.
+            </p>
+            <p>
+                By completing this project, I gained a much stronger understanding of computer architecture and
+                digital logic design. This knowledge is directly applicable to embedded systems development, where
+                understanding how hardware executes software is essential for writing efficient, low-level firmware.
+            </p>
+            <img src="./images/project4.png" alt="Single-Cycle Processor MIPS datapath diagram">
+        </div>
+
+        <div class="project">
+            <h3>Project 5: Roomba Obstacle Course</h3>
+            <p>
+                My fifth project took place in the CPRE 2880: Embedded Systems 1 class at Iowa State University. 
+                My team was tasked with modifying a Roomba to navigate an obstacle course without hitting obstacles or leaving the course. 
+                The challenge was that the driver could not see the robot and had to rely only on sensor data to guide it.
+            </p>
+            <p>
+                I programmed a TM4C123GH6PM microcontroller using embedded C to control the Roomba via keyboard inputs,
+                working with the UART, ADC, and PWM interfaces to process sensor data and drive the motors. This required
+                careful timing, real-time processing, and a solid understanding of the microcontroller's peripheral
+                modules.
+            </p>
+            <p>
+                Through this project, I learned the importance of low-level hardware interfacing, sensor integration,
+                and real-time control systems. These skills are foundational to my work in embedded systems and
+                were a great precursor to the firmware development I do now at Rice Lake Weighing Systems.
+            </p>
+            <div class="project-gallery">
+                <img src="./images/project5-1.png" alt="Roomba robot with TM4C microcontroller wiring">
+                <img src="./images/project5-2.png" alt="Roomba connected to breadboard and sensor setup">
+                <img src="./images/project5-3.png" alt="Obstacle course setup for Roomba navigation">
+                <img src="./images/project5-4.png" alt="Roomba obstacle avoidance in action">
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="copyright-year">2026</span> Caden Otis &nbsp;|&nbsp; <a href="mailto:cadenotis@gmail.com">cadenotis@gmail.com</a></p>
+    </footer>
+    <script src="./auto-generate-year.js"></script>
+</body>
+
+</html>
