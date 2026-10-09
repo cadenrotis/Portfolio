@@ -3,7 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <base href="./">
+    <script>
+        // GitHub Pages serves this file for any missing URL, so the requested path
+        // can be anything (e.g. /Website/typo/ or /Website/a/b). Resolve the site
+        // root explicitly so relative assets and links always work -- on the
+        // deployed site (/Website/), on a future custom domain (/), and when this
+        // page is previewed locally from either the Website/ folder or its parent.
+        document.write('<base href="' +
+            (location.pathname.indexOf('/Website/') === 0 ? '/Website/' : '/') + '">');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
