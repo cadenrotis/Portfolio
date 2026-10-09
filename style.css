@@ -45,6 +45,10 @@ footer {
     color: #fff;
 }
 
+footer a {
+    color: #fff;
+}
+
 /* --- Content Pages Left Padding --- */
 
 #experience,
