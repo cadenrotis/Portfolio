@@ -37,4 +37,4 @@ Then visit http://localhost:8000. The home page is at `/`, and the other pages a
 
 ## Deployment
 
-The site is deployed to GitHub Pages from the `main` branch (root directory). Pushing to `main` automatically updates the live site at https://cadenrotis.github.io/Portfolio/.
+The site is deployed to GitHub Pages from the `main` branch (root directory). The live site is located at https://cadenrotis.github.io/Portfolio/.
