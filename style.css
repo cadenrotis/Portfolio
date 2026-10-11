@@ -423,6 +423,9 @@ main.page-center {
     fill: currentColor;
 }
 
+/* --- Resume page ---
+   The resume PDF is embedded in an <iframe>; these rules style the box around
+   it and give it a tall, responsive height (reduced a little below 560px). */
 #resume h2 {
     margin-bottom: 16px;
 }
