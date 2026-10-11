@@ -379,7 +379,7 @@ main.page-center {
 .contact-icon {
     display: block;
     margin: 0 auto 12px;
-    max-width: 450px;
+    max-width: min(450px, 100%);
 }
 /* --- Footer social icons ---
    The icon links live in each page's <footer> markup as inline SVG (shapes
