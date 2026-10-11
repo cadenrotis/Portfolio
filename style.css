@@ -379,6 +379,7 @@ main.page-center {
 .contact-icon {
     display: block;
     margin: 0 auto 12px;
+    /* min() keeps the 450px desktop cap but never lets the image exceed its container */
     max-width: min(450px, 100%);
 }
 /* --- Footer social icons ---
