@@ -420,3 +420,71 @@ main.page-center {
     height: 22px;
     fill: currentColor;
 }
+
+@media (max-width: 700px) {
+    nav ul {
+        flex-wrap: wrap;
+        padding: 0;
+        row-gap: 6px;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    nav a {
+        font-size: 0.95em;
+    }
+
+    #experience,
+    #skills,
+    #projects,
+    #contact {
+        padding: 20px 20px;
+    }
+
+    .container {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .project-gallery,
+    .job-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #hero {
+        padding: 28px 16px;
+    }
+
+    #hero h1 {
+        font-size: 1.6em;
+    }
+
+    #hero .subtitle {
+        font-size: 1.15em;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .job {
+        padding: 10px 14px;
+    }
+
+    .honors-list li {
+        padding: 12px 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    nav li {
+        margin: 0 7px;
+    }
+
+    nav a {
+        font-size: 0.9em;
+    }
+}
