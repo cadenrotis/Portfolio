@@ -13,6 +13,7 @@ Pages use directory-based clean URLs (no `.html`): each page is an `index.html` 
 | Skills | `/skills/` | Technical skills organized into categories (languages, web tech, tools, hardware) |
 | Projects | `/projects/` | Projects from coursework and personal work (portfolio, Wordle, temp sensor, processor, Roomba) |
 | Honors | `/honors/` | Academic honors, awards, and scholarship programs |
+| Resume | `/resume/` | Resume shown in an embedded PDF viewer, with a link to open or download the PDF |
 | Contact | `/contact/` | Contact info including email, LinkedIn, and GitHub |
 | 404 | `/404.html` | Custom 404 page with compass icon and link back to homepage |
 
