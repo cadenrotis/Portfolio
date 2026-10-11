@@ -379,7 +379,8 @@ main.page-center {
 .contact-icon {
     display: block;
     margin: 0 auto 12px;
-    max-width: 450px;
+    /* min() keeps the 450px desktop cap but never lets the image exceed its container */
+    max-width: min(450px, 100%);
 }
 /* --- Footer social icons ---
    The icon links live in each page's <footer> markup as inline SVG (shapes
@@ -419,4 +420,78 @@ main.page-center {
     width: 22px;
     height: 22px;
     fill: currentColor;
+}
+
+/* --- Responsive layout (mobile) ---
+   Below 700px the nav wraps and tightens so all six links stay visible
+   instead of overflowing off-screen; the other breakpoints trim content
+   padding and stack the two-column galleries on small phones. */
+@media (max-width: 700px) {
+    nav ul {
+        flex-wrap: wrap;
+        padding: 0;
+        row-gap: 6px;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    nav a {
+        font-size: 0.95em;
+    }
+
+    #experience,
+    #skills,
+    #projects,
+    #contact {
+        padding: 20px 20px;
+    }
+
+    .container {
+        padding: 24px 20px;
+    }
+}
+
+/* Small phones: single-column galleries, tighter hero/card spacing. */
+@media (max-width: 560px) {
+    .project-gallery,
+    .job-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #hero {
+        padding: 28px 16px;
+    }
+
+    #hero h1 {
+        font-size: 1.6em;
+    }
+
+    #hero .subtitle {
+        font-size: 1.15em;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .job {
+        padding: 10px 14px;
+    }
+
+    .honors-list li {
+        padding: 12px 14px;
+    }
+}
+
+/* Very small phones: keep the nav on as few lines as possible. */
+@media (max-width: 380px) {
+    nav li {
+        margin: 0 7px;
+    }
+
+    nav a {
+        font-size: 0.9em;
+    }
 }
