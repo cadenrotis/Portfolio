@@ -382,7 +382,8 @@ main.page-center {
     max-width: 450px;
 }
 /* --- Footer social icons ---
-   The icon links live in each page's <footer> markup as inline SVG, so
+   The icon links live in each page's <footer> markup as inline SVG (shapes
+   from the open Simple Icons brand set), so
    there is no image file to load. They are sized 22x22 and colored via
    fill:currentColor, which inherits the footer's white text color. Hover
    and keyboard focus raise opacity, and a visible focus outline keeps the

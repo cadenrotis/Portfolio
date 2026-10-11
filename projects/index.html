@@ -183,8 +183,12 @@
                            automatically; it is kept explicit for older browsers.
             aria-label on each <a> -> spoken name for screen readers, since a link containing only
                            an icon has no visible text to announce.
-            Icons are inline SVG with fill="currentColor", so they inherit the footer's white text
-            color and add no extra network request. To change a profile, edit its href below.
+            How the icons work: the logo shapes come from the open, public-domain (CC0) "Simple Icons" brand
+            set and are embedded inline as SVG vector paths on a 24x24 grid, rather than loaded as
+            image files. The browser draws them as vectors, so they stay sharp at any zoom and cost
+            no extra network request. fill="currentColor" makes each inherit the footer's white
+            text color, and the rendered size is set by .footer-icon in style.css. To change a
+            profile, edit its href below.
         -->
         <nav class="footer-social" aria-label="Social profiles">
             <a href="https://github.com/cadenrotis" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
