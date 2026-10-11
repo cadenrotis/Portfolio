@@ -421,6 +421,10 @@ main.page-center {
     fill: currentColor;
 }
 
+/* --- Responsive layout (mobile) ---
+   Below 700px the nav wraps and tightens so all six links stay visible
+   instead of overflowing off-screen; the other breakpoints trim content
+   padding and stack the two-column galleries on small phones. */
 @media (max-width: 700px) {
     nav ul {
         flex-wrap: wrap;
@@ -448,6 +452,7 @@ main.page-center {
     }
 }
 
+/* Small phones: single-column galleries, tighter hero/card spacing. */
 @media (max-width: 560px) {
     .project-gallery,
     .job-gallery {
@@ -479,6 +484,7 @@ main.page-center {
     }
 }
 
+/* Very small phones: keep the nav on as few lines as possible. */
 @media (max-width: 380px) {
     nav li {
         margin: 0 7px;
