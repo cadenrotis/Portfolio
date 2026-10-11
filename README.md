@@ -4,7 +4,7 @@ My personal portfolio website showcasing my academic background, professional ex
 
 ## Pages
 
-Pages use directory-based clean URLs (no `.html`): each page is an `index.html` inside its own folder, served at `/Portfolio/<name>/`.
+This website use directory-based clean URLs (no `.html` at the end of URL on each page). Each page is an `index.html` inside its own folder, served at `/Portfolio/<name>/`.
 
 | Page | URL | Description |
 |------|-----|-------------|
@@ -17,17 +17,15 @@ Pages use directory-based clean URLs (no `.html`): each page is an `index.html` 
 | Contact | `/contact/` | Contact info including email, LinkedIn, and GitHub |
 | 404 | `/404.html` | Custom 404 page with compass icon and link back to homepage |
 
-Each page carries a relative `<base>` tag — `./` on the root pages, `../` on the subpages — so relative links to shared assets (`style.css`, `images/…`, `auto-generate-year.js`) resolve at any folder depth.
-
 ## Tech Stack
 
 - HTML5
 - CSS3 (Flexbox, SVG icons)
-- JavaScript (`auto-generate-year.js` — keeps the footer copyright year current)
+- JavaScript 
 
 ## Running Locally
 
-There is no build step or dependencies — just static files. Because the pages use folder URLs (`/experience/`, `/skills/`, …), you need a local web server. Opening the file directly from disk (`file://`) or using an extension like VS Code's Live Server will not work, because neither maps a folder to its `index.html`.
+There is no build step or dependencies. Because the website use folder URLs (`/experience/`, `/skills/`, …), you need a local web server. Opening the file directly from disk (`file://`) or using an extension like VS Code's Live Server will not work, because neither maps a folder to its `index.html`.
 
 ```bash
 # run this from the repository root
