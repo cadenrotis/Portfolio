@@ -381,7 +381,12 @@ main.page-center {
     margin: 0 auto 12px;
     max-width: 450px;
 }
-/* --- Footer social icons --- */
+/* --- Footer social icons ---
+   The icon links live in each page's <footer> markup as inline SVG, so
+   there is no image file to load. They are sized 22x22 and colored via
+   fill:currentColor, which inherits the footer's white text color. Hover
+   and keyboard focus raise opacity, and a visible focus outline keeps the
+   links usable without a mouse. */
 .footer-social {
     display: flex;
     justify-content: center;
