@@ -32,9 +32,15 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.toggle('is-scrolled', window.scrollY > SCROLL_THRESHOLD);
     }
 
-    window.addEventListener('scroll', updateButtonVisibility, { passive: true });
-    updateButtonVisibility(); // set the correct state on load, e.g. after a refresh
+    // set the correct state on load, e.g. after a refresh.
+    updateButtonVisibility(); 
 
+    // Anytime the page is scrolled, check if the button should be shown or hidden. The { passive: true }
+    // option is used to improve performance by telling the browser that the event handler
+    // will not call preventDefault().
+    window.addEventListener('scroll', updateButtonVisibility, { passive: true });
+
+    // When the "Back to top" button is clicked, scroll to the top of the page smoothly.
     topBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
