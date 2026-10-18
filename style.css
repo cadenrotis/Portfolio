@@ -424,7 +424,7 @@ main.page-center {
 }
 
 /* --- Back to top button
-   A fixed bottom-right button, created by auto-generate-year.js on every page.
+   A fixed bottom-right button, created by site.js on every page.
    It stays invisible until the reader scrolls down a little (the script toggles
    body.is-scrolled), then fades in; clicking it smooth-scrolls back to the top.
    A light fill keeps it legible over both the white page and the dark footer. */

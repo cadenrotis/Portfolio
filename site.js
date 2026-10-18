@@ -1,5 +1,6 @@
-// Keeps the footer copyright year current and powers the "Back to top" button.
-// The year hardcoded in the HTML is a fallback for visitors with JavaScript disabled.
+// Shared behavior for every page: keeps the footer copyright year current and
+// powers the "Back to top" button. The year hardcoded in the HTML is a fallback
+// for visitors with JavaScript disabled.
 
 // This event is called once the browser has fully loaded the HTML for a page
 document.addEventListener('DOMContentLoaded', function () {
