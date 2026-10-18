@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var topBtn = document.createElement('button');
     topBtn.id = 'back-to-top';
     topBtn.type = 'button';
-    topBtn.setAttribute('aria-label', 'Back to top');
+    topBtn.setAttribute('aria-label', 'Back to top'); // for screen readers to tell them what the button does
     topBtn.textContent = '\u2191'; // up arrow
     document.body.appendChild(topBtn);
 
