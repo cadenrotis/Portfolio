@@ -1,4 +1,4 @@
-// Keeps the footer copyright year current without manual edits.
+// Keeps the footer copyright year current and powers the "Back to top" button.
 // The year hardcoded in the HTML is a fallback for visitors with JavaScript disabled.
 
 // This event is called once the browser has fully loaded the HTML for a page
@@ -11,4 +11,31 @@ document.addEventListener('DOMContentLoaded', function () {
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
+
+    // --- Back to top button ---
+    // Built here instead of in every page's HTML so all pages share one definition.
+    // With JavaScript disabled the button simply never appears, which is fine
+    // because the nav is already at the top of every page.
+    var SCROLL_THRESHOLD = 300; // pixels scrolled before the button appears
+
+    var topBtn = document.createElement('button');
+    topBtn.id = 'back-to-top';
+    topBtn.type = 'button';
+    topBtn.setAttribute('aria-label', 'Back to top');
+    topBtn.textContent = '\u2191'; // up arrow
+    document.body.appendChild(topBtn);
+
+    // Show the button once the reader has scrolled a little, hide it again at the
+    // top. The body class it toggles also reserves footer space (see style.css)
+    // so the button never covers the footer content.
+    function updateButtonVisibility() {
+        document.body.classList.toggle('is-scrolled', window.scrollY > SCROLL_THRESHOLD);
+    }
+
+    window.addEventListener('scroll', updateButtonVisibility, { passive: true });
+    updateButtonVisibility(); // set the correct state on load, e.g. after a refresh
+
+    topBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
