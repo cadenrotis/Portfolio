@@ -423,6 +423,48 @@ main.page-center {
     fill: currentColor;
 }
 
+/* --- Back to top button
+   A fixed bottom-right button, created by site.js on every page.
+   It stays invisible until the reader scrolls down a little (the script toggles
+   body.is-scrolled), then fades in; clicking it smooth-scrolls back to the top.
+   A light fill keeps it legible over both the white page and the dark footer. */
+#back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    font-size: 1.2em;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 100;
+}
+
+body.is-scrolled #back-to-top {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background-color: #f5f5f5;
+}
+
+#back-to-top:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 3px;
+}
+
 /* --- Resume page ---
    The resume PDF is embedded in an <iframe>; these rules style the box around
    it and give it a tall, responsive height (reduced a little below 560px). */
