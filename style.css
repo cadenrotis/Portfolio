@@ -72,7 +72,9 @@ footer a:focus-visible::after {
     transform: scaleX(1);
 }
 
-/* Respect a reduced-motion preference: show the underline without the grow-in. */
+/* Respect a reduced-motion preference (an OS/browser accessibility setting): the
+   underline still appears on hover, focus and the current page - it just doesn't
+   grow in. Any new animated selector belongs in this list too. */
 @media (prefers-reduced-motion: reduce) {
     nav a::after,
     footer a::after {
