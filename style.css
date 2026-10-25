@@ -1,7 +1,35 @@
+/* --- Accent color ---
+   The single accent, used for every hover/active state in the header nav and
+   the footer (link underlines, the facing edge of each bar, and the social
+   icons on hover) so the two bars read as one system. Picked to stay legible
+   against the #333 bars.
+*/
+:root {
+    --accent: #e0a458;
+}
+
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    /* Thin accent edge facing the page, mirrored by the footer's top border. */
+    border-bottom: 3px solid var(--accent);
+    /* Pin the bar to the top of the viewport while the page scrolls under it.
+       Sticky (not fixed) keeps the bar in the document flow, so the footer and
+       every page's layout stay exactly as they were. */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Transparent by default; the colour fades in via body.is-scrolled below. */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.25s ease;
+}
+
+/* Soft shadow once the reader has scrolled, so the pinned bar reads as sitting
+   above the content. Reuses the body.is-scrolled class site.js already toggles
+   for the back-to-top button. */
+body.is-scrolled header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -15,13 +43,53 @@ nav li {
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
     color: #fff;
 }
 
-nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
+/* --- Accent underline (header nav + footer) ---
+   A short accent bar under each link. It grows out from the center on hover
+   and keyboard focus, and stays visible on the current page's nav link (the
+   old bold + underline is dropped so the link doesn't double up or shift).
+   Drawn as a pseudo-element, so it adds no layout and never affects the nav's
+   wrapping at narrow widths. */
+nav a::after,
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+/* The underline shows up three ways: :hover (mouse), :focus-visible (keyboard
+   tabbing; unlike :focus it ignores mouse clicks), and .active - a CLASS set in
+   the HTML on the current page's link, not the :active pseudo-class ("being
+   pressed"). Targeting a:hover::after, not a:hover, reaches the generated
+   underline box rather than the link text. */
+nav a:hover::after,
+nav a:focus-visible::after,
+nav a.active::after, /* This denotes the currently selected/active page, so the underline stays in the nav bar for that page */
+footer a:hover::after,
+footer a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* Respect a reduced-motion preference: show the underline and the header shadow
+   without the grow-in / fade. */
+@media (prefers-reduced-motion: reduce) {
+    nav a::after,
+    footer a::after,
+    header {
+        transition: none;
+    }
 }
 
 body {
@@ -43,10 +111,14 @@ footer {
     padding: 10px;
     background-color: #333;
     color: #fff;
+    /* Mirrors the header's bottom edge so the two bars read as one system. */
+    border-top: 3px solid var(--accent);
 }
 
 footer a {
+    position: relative;
     color: #fff;
+    text-decoration: none;
 }
 
 /* --- Content Pages Left Padding --- */
@@ -402,14 +474,20 @@ main.page-center {
     display: inline-flex;
     color: #fff;
     opacity: 0.85;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
 }
 
+/* The accent covers this hover state too, so it is the only highlight color
+   used in either bar. :focus-visible sits alongside :hover so a keyboard user
+   tabbing to an icon gets the same highlight. */
 .footer-social a:hover,
 .footer-social a:focus-visible {
     opacity: 1;
+    color: var(--accent);
 }
 
+/* Separate from the highlight above so the ring stays keyboard-only: unlike
+   :focus, :focus-visible does not fire on a mouse click. */
 .footer-social a:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 3px;
