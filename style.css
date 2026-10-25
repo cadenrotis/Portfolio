@@ -69,6 +69,11 @@ footer a::after {
     transition: transform 0.2s ease;
 }
 
+/* The underline shows up three ways: :hover (mouse), :focus-visible (keyboard
+   tabbing; unlike :focus it ignores mouse clicks), and .active - a CLASS set in
+   the HTML on the current page's link, not the :active pseudo-class ("being
+   pressed"). Targeting a:hover::after, not a:hover, reaches the generated
+   underline box rather than the link text. */
 nav a:hover::after,
 nav a:focus-visible::after,
 nav a.active::after,
@@ -473,13 +478,16 @@ main.page-center {
 }
 
 /* The accent covers this hover state too, so it is the only highlight color
-   used in either bar. */
+   used in either bar. :focus-visible sits alongside :hover so a keyboard user
+   tabbing to an icon gets the same highlight. */
 .footer-social a:hover,
 .footer-social a:focus-visible {
     opacity: 1;
     color: var(--accent);
 }
 
+/* Separate from the highlight above so the ring stays keyboard-only: unlike
+   :focus, :focus-visible does not fire on a mouse click. */
 .footer-social a:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 3px;
