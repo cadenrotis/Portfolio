@@ -76,7 +76,7 @@ footer a::after {
    underline box rather than the link text. */
 nav a:hover::after,
 nav a:focus-visible::after,
-nav a.active::after,
+nav a.active::after, /* This denotes the currently selected/active page, so the underline stays in the nav bar for that page */
 footer a:hover::after,
 footer a:focus-visible::after {
     transform: scaleX(1);
