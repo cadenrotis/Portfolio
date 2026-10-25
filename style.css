@@ -10,6 +10,8 @@ header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    /* Thin accent edge facing the page, mirrored by the footer's top border. */
+    border-bottom: 3px solid var(--accent);
 }
 
 nav ul {
@@ -84,6 +86,8 @@ footer {
     padding: 10px;
     background-color: #333;
     color: #fff;
+    /* Mirrors the header's bottom edge so the two bars read as one system. */
+    border-top: 3px solid var(--accent);
 }
 
 footer a {
