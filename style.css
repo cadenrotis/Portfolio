@@ -1,3 +1,11 @@
+/* --- Accent color ---
+   One warm accent, shared by the header nav and the footer so the two bars
+   read as one system. Picked to stay legible against the #333 bars.
+*/
+:root {
+    --accent: #e0a458;
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -15,13 +23,46 @@ nav li {
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
     color: #fff;
 }
 
-nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
+/* --- Accent underline (header nav + footer) ---
+   A short accent bar under each link. It grows out from the center on hover
+   and keyboard focus, and stays visible on the current page's nav link (the
+   old bold + underline is dropped so the link doesn't double up or shift).
+   Drawn as a pseudo-element, so it adds no layout and never affects the nav's
+   wrapping at narrow widths. */
+nav a::after,
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after,
+nav a.active::after,
+footer a:hover::after,
+footer a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* Respect a reduced-motion preference: show the underline without the grow-in. */
+@media (prefers-reduced-motion: reduce) {
+    nav a::after,
+    footer a::after {
+        transition: none;
+    }
 }
 
 body {
@@ -46,7 +87,9 @@ footer {
 }
 
 footer a {
+    position: relative;
     color: #fff;
+    text-decoration: none;
 }
 
 /* --- Content Pages Left Padding --- */
