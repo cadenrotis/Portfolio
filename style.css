@@ -1,6 +1,8 @@
 /* --- Accent color ---
-   One warm accent, shared by the header nav and the footer so the two bars
-   read as one system. Picked to stay legible against the #333 bars.
+   The single accent, used for every hover/active state in the header nav and
+   the footer (link underlines, the facing edge of each bar, and the social
+   icons on hover) so the two bars read as one system. Picked to stay legible
+   against the #333 bars.
 */
 :root {
     --accent: #e0a458;
@@ -449,12 +451,15 @@ main.page-center {
     display: inline-flex;
     color: #fff;
     opacity: 0.85;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
 }
 
+/* The accent covers this hover state too, so it is the only highlight color
+   used in either bar. */
 .footer-social a:hover,
 .footer-social a:focus-visible {
     opacity: 1;
+    color: var(--accent);
 }
 
 .footer-social a:focus-visible {
