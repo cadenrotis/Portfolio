@@ -14,6 +14,22 @@ header {
     padding: 10px 0;
     /* Thin accent edge facing the page, mirrored by the footer's top border. */
     border-bottom: 3px solid var(--accent);
+    /* Pin the bar to the top of the viewport while the page scrolls under it.
+       Sticky (not fixed) keeps the bar in the document flow, so the footer and
+       every page's layout stay exactly as they were. */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Transparent by default; the colour fades in via body.is-scrolled below. */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.25s ease;
+}
+
+/* Soft shadow once the reader has scrolled, so the pinned bar reads as sitting
+   above the content. Reuses the body.is-scrolled class site.js already toggles
+   for the back-to-top button. */
+body.is-scrolled header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -61,10 +77,12 @@ footer a:focus-visible::after {
     transform: scaleX(1);
 }
 
-/* Respect a reduced-motion preference: show the underline without the grow-in. */
+/* Respect a reduced-motion preference: show the underline and the header shadow
+   without the grow-in / fade. */
 @media (prefers-reduced-motion: reduce) {
     nav a::after,
-    footer a::after {
+    footer a::after,
+    header {
         transition: none;
     }
 }
