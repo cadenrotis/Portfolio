@@ -369,6 +369,15 @@ main.page-center {
     padding: 12px 20px;
 }
 
+/* Same treatment as the project cards: the image sits at the bottom of the
+   card, centred, at its natural size and scaling down with the column. */
+.education-entry > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 16px auto 0;
+}
+
 .education-school {
     display: block;
     font-weight: bold;
