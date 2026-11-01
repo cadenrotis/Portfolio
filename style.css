@@ -342,21 +342,25 @@ main.page-center {
 
 /* --- Education Page --- */
 
+/* The Education page stacks several subsections in one centred column. */
 #education,
-#honors {
+#honors,
+#activities {
     max-width: 720px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* The page holds two stacked sections; drop the second one's top padding so
-   they read as subsections of one page rather than two separate pages. */
-#honors {
+/* Keep only the first section's top gutter so the subsections read as parts of
+   one page rather than separate pages. */
+#honors,
+#activities {
     padding-top: 0;
 }
 
 #education h2,
-#honors h2 {
+#honors h2,
+#activities h2 {
     margin-bottom: 24px;
 }
 
