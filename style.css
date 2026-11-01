@@ -442,10 +442,12 @@ main.page-center {
 /* Activity images, laid out two-up like the experience page's job galleries
    with the same caption treatment. Unlike those galleries the images are not
    stretched to the column width: each keeps its own aspect ratio and is never
-   upscaled, so the small Tau Beta Pi logo stays sharp. */
+   upscaled, so the small Tau Beta Pi logo stays sharp. The first column sizes
+   to the logo and the photo takes the rest, so the photo is as wide as the
+   pair allows (an even split would cap the photo at half the section). */
 .activity-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.65fr 1fr;
     gap: 8px;
     align-items: start;
     margin-top: 16px;
