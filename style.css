@@ -77,7 +77,8 @@ footer a:focus-visible::after {
    grow in. Any new animated selector belongs in this list too. */
 @media (prefers-reduced-motion: reduce) {
     nav a::after,
-    footer a::after {
+    footer a::after,
+    .guide-card {
         transition: none;
     }
 }
@@ -132,7 +133,9 @@ footer a {
 .project {
     margin-bottom: 20px;
     border: 1px solid #ccc;
+    border-radius: 8px;
     padding: 20px;
+    transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .project > img {
