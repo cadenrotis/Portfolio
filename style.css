@@ -439,6 +439,39 @@ main.page-center {
     color: #555;
 }
 
+/* Activity images, laid out two-up like the experience page's job galleries
+   with the same caption treatment. Unlike those galleries the images are not
+   stretched to the column width: each keeps its own aspect ratio and is never
+   upscaled, so the small Tau Beta Pi logo stays sharp. */
+.activity-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-items: start;
+    margin-top: 16px;
+}
+
+.activity-gallery figure {
+    margin: 0;
+}
+
+.activity-gallery img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.activity-gallery figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 4px;
+}
+
 .skills-category {
     margin-bottom: 20px;
 }
@@ -649,7 +682,8 @@ body.is-scrolled #back-to-top {
 /* Small phones: single-column galleries, tighter hero/card spacing. */
 @media (max-width: 560px) {
     .project-gallery,
-    .job-gallery {
+    .job-gallery,
+    .activity-gallery {
         grid-template-columns: 1fr;
     }
 
