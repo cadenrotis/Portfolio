@@ -414,6 +414,23 @@ main.page-center {
     max-width: min(400px, 100%);
 }
 
+/* Service descriptions, laid out two-up so the list reads as a set of cards
+   rather than a wall of bullets. Each card keeps the site's left-border card
+   look and the description typography already used on the Education page. */
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.service-list li {
+    border-left: 3px solid #333;
+    padding: 10px 16px;
+}
+
 .education-entry {
     border-left: 3px solid #333;
     padding: 12px 20px;
@@ -736,7 +753,8 @@ body.is-scrolled #back-to-top {
 @media (max-width: 560px) {
     .project-gallery,
     .job-gallery,
-    .activity-gallery {
+    .activity-gallery,
+    .service-list {
         grid-template-columns: 1fr;
     }
 

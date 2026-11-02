@@ -96,15 +96,47 @@
             reason about. It works a second job as my DNS and media box.</p>
 
         <h3>Services &amp; Tools</h3>
-        <ul class="skill-tags">
-            <li>Docker</li>
-            <li>Ubuntu</li>
-            <li>Pi-hole</li>
-            <li>Jellyfin</li>
-            <li>SearXNG</li>
-            <li>Tailscale</li>
-            <li>Hermes</li>
-            <li>Ollama</li>
+        <ul class="service-list">
+            <li>
+                <span class="honor-name">Docker</span>
+                <p class="honor-desc">Every service runs in its own container, defined by a Compose file, so I can rebuild or replace one
+                    without disturbing the rest of the machine.</p>
+            </li>
+            <li>
+                <span class="honor-name">Ubuntu</span>
+                <p class="honor-desc">The host operating system. Security updates install unattended on a weekly schedule, and the machine
+                    reboots itself afterward.</p>
+            </li>
+            <li>
+                <span class="honor-name">Pi-hole</span>
+                <p class="honor-desc">Network-wide DNS filtering, so ad and tracker domains are blocked for every device on the network
+                    without configuring each one.</p>
+            </li>
+            <li>
+                <span class="honor-name">Jellyfin</span>
+                <p class="honor-desc">My own media server. It streams the films and shows I already own to the TV, phone, and browser, with
+                    no subscription involved.</p>
+            </li>
+            <li>
+                <span class="honor-name">SearXNG</span>
+                <p class="honor-desc">A self-hosted search instance. The agent's web searches go through it rather than a commercial API, so
+                    queries aren't tied to an account.</p>
+            </li>
+            <li>
+                <span class="honor-name">Tailscale</span>
+                <p class="honor-desc">A private mesh network that makes the server reachable from my phone and laptop while I'm away from
+                    home, without opening a port to the internet.</p>
+            </li>
+            <li>
+                <span class="honor-name">Hermes</span>
+                <p class="honor-desc">The agent itself: a service that connects the assistant to my files, the shell, a browser, and
+                    Telegram, and runs the scheduled jobs.</p>
+            </li>
+            <li>
+                <span class="honor-name">Ollama</span>
+                <p class="honor-desc">Runs language models locally on the CPU, so smaller tasks stay on my own hardware instead of going out
+                    to a hosted API.</p>
+            </li>
         </ul>
 
         <p>Everything is defined in Docker Compose files, so a service is a configuration change rather than a manual
