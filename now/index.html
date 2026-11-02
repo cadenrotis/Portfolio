@@ -139,8 +139,10 @@
             </li>
         </ul>
 
-        <p>None of it is exposed to the public internet, and each service serves HTTPS from a certificate authority
-            I issued and trust on my own devices.</p>
+        <p>Between them they cover a lot of ground for one small machine: the network gets filtered, the films and
+            shows live on my own disk, searches don't go through an ad-funded engine, the box is reachable from
+            anywhere without being exposed to the internet, and the agent and its models run on hardware I own. Each service serves
+            HTTPS from a certificate authority I issued myself.</p>
         <p>Keeping it healthy is its own project. Updates install unattended on a weekly schedule and the machine
             reboots itself afterward, which only works because the update routine reports back over Telegram before
             it goes down. Local models run on CPU, so I keep them small and the context window modest; working out
