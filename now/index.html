@@ -139,9 +139,8 @@
             </li>
         </ul>
 
-        <p>Everything is defined in Docker Compose files, so a service is a configuration change rather than a manual
-            install. Nothing is exposed to the public internet: remote access goes through a private mesh network, and
-            each service serves HTTPS from a locally issued certificate authority I trust on my own devices.</p>
+        <p>None of it is exposed to the public internet, and each service serves HTTPS from a certificate authority
+            I issued and trust on my own devices.</p>
         <p>Keeping it healthy is its own project. Updates install unattended on a weekly schedule and the machine
             reboots itself afterward, which only works because the update routine reports back over Telegram before
             it goes down. Local models run on CPU, so I keep them small and the context window modest; working out
