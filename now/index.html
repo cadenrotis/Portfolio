@@ -65,10 +65,11 @@
 
     <section id="now-assistant">
         <h2>A Self-Hosted AI Assistant</h2>
-        <p>Hermes is an AI agent I run on my own hardware instead of paying for a hosted service. I reach it from my
-            phone through Telegram, and it can read and write files, run shell commands, search the web, and drive a
-            browser. That makes it feel less like a chat window I ask questions and more like a junior teammate I can
-            hand a task to.</p>
+        <p>Hermes is an AI agent I run on my own hardware instead of paying for a hosted service. I can reach it from any device 
+            on my local network, as well as from my phone through Telegram, and it can read and write files, run shell commands, 
+            search the web, and drive a browser. That makes it feel less like a chat window I ask questions too and more like teammate
+            I can work with.
+        </p>
         <ul>
             <li><strong>Conversational access:</strong> I message it the way I would message a coworker. It keeps
                 context across a conversation and stores standing preferences in a persistent memory file, so I don't
@@ -89,20 +90,20 @@
 
     <section id="now-server">
         <h2>The Server Behind It</h2>
-        <p>All of it runs on one laptop-turned-server: an AMD Ryzen 7 6800U with about 20 GB of RAM running Ubuntu.
+        <p>All of it runs on one mini PC-turned-server: an AMD Ryzen 7 6800U with 24 GB of RAM running Ubuntu.
             Staying on a single machine keeps the whole setup cheap and gives me one place to patch, back up, and
             reason about. It works a second job as my DNS and media box.</p>
 
         <h3>Services &amp; Tools</h3>
         <ul class="skill-tags">
-            <li>Docker Compose</li>
+            <li>Docker</li>
             <li>Ubuntu</li>
             <li>Pi-hole</li>
             <li>Jellyfin</li>
             <li>SearXNG</li>
-            <li>Ollama</li>
             <li>Tailscale</li>
-            <li>mkcert</li>
+            <li>Hermes</li>
+            <li>Ollama</li>
         </ul>
 
         <p>Everything is defined in Docker Compose files, so a service is a configuration change rather than a manual
@@ -118,8 +119,7 @@
         <h2>What's Next</h2>
         <ul>
             <li>Extending the agent's automation to cover more of my routine repository and server maintenance.</li>
-            <li>Pushing what a CPU-only machine can run locally, and comparing that against what is worth sending to
-                a hosted model.</li>
+            <li>Build a PC that can run more powerful models locally.</li>
             <li>Turning this page itself into a habit, updating it as the focus shifts rather than at the end of a
                 project.</li>
         </ul>
