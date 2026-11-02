@@ -688,7 +688,8 @@ body.is-scrolled #back-to-top {
     border: 0;
 }
 /* --- Responsive layout (mobile) ---
-   Below 700px the nav wraps and tightens so all six links stay visible
+   Below 700px the nav tightens (and, from the base rule, wraps) so all eight
+   links stay visible
    instead of overflowing off-screen; the other breakpoints trim content
    padding and stack the two-column galleries on small phones. */
 @media (max-width: 700px) {
