@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="../">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicon.png">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <title>Caden Otis - What I'm Working On</title>
+    <meta name="description" content="What Caden Otis is currently building: a self-hosted AI assistant and the home server it runs on.">
+    <meta name="author" content="Caden Otis">
+    <link rel="canonical" href="https://cadenrotis.github.io/Portfolio/now/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Caden Otis - What I'm Working On">
+    <meta property="og:description" content="The self-hosted AI assistant and home server currently holding my attention.">
+    <meta property="og:url" content="https://cadenrotis.github.io/Portfolio/now/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Caden Otis">
+    <meta property="og:image" content="https://cadenrotis.github.io/Portfolio/images/profile.jpg">
+
+    <!-- Twitter/X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caden Otis - What I'm Working On">
+    <meta name="twitter:description" content="The self-hosted AI assistant and home server currently holding my attention.">
+    <meta name="twitter:image" content="https://cadenrotis.github.io/Portfolio/images/profile.jpg">
+
+    <!-- Site analytics: GoatCounter - cookie-free visit counting, no consent banner
+         needed. The absolute https src also resolves on plain-http local previews.
+         GoatCounter reads this page's canonical link to pick the recorded path.
+         To stop counting your own visits, load any page with #toggle-goatcounter
+         appended, e.g. https://cadenrotis.github.io/Portfolio/#toggle-goatcounter -->
+    <script data-goatcounter="https://cadenotis.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="experience/">Experience</a></li>
+                <li><a href="skills/">Skills</a></li>
+                <li><a href="projects/">Projects</a></li>
+                <li><a href="education/">Education</a></li>
+                <li><a href="resume/">Resume</a></li>
+                <li><a href="now/" class="active">What I'm Working On</a></li>
+                <li><a href="contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section id="now">
+        <h2>What I'm Working On</h2>
+        <p class="date">Last updated: Nov 2026</p>
+        <p>Outside of my day job I keep a home lab running, and most of my personal projects grow out of it. This
+            page is a snapshot of what currently has my attention, rather than a finished write-up of it. Of
+            everything on this site it is the page that changes most often.</p>
+        <p>Right now that means two things that are really one project: an AI assistant I host myself, and the
+            server it lives on.</p>
+    </section>
+
+    <section id="now-assistant">
+        <h2>A Self-Hosted AI Assistant</h2>
+        <p>Hermes is an AI agent I run on my own hardware instead of paying for a hosted service. I can reach it from any device
+            on my local network, as well as from my phone through Telegram, and it can read and write files, run shell commands,
+            search the web, and drive a browser. That makes it feel less like a chat window I ask questions to and more like a teammate
+            I can work with.
+        </p>
+        <ul>
+            <li><strong>Conversational access:</strong> I message it the way I would message a coworker. It keeps
+                context across a conversation and stores standing preferences in a persistent memory file, so I don't
+                have to restate how I like things done.</li>
+            <li><strong>Scheduled work:</strong> a few jobs run on their own schedule, including a weekly OS update
+                check that reports what it found before applying patches, a periodic cleanup of old session data, and
+                a daily technology news digest delivered to my phone.</li>
+            <li><strong>Tools:</strong> it searches through a self-hosted SearXNG instance, reads pages with a real
+                browser rather than a scraper, and works with Git and the GitHub CLI, so it can open issues and pull
+                requests the same way I do.</li>
+            <li><strong>Reusable procedures:</strong> instructions for recurring tasks live in small skill files that
+                the agent loads when a matching task comes up. An update routine or a change to this site then runs
+                the same way every time instead of being worked out from scratch.</li>
+        </ul>
+        <p>The interesting part isn't the model, it's the engineering around it: permissions, scheduled jobs, and
+            keeping an agent with shell access pointed at the things it should touch and nothing else.</p>
+        <img src="./images/hermes_agent.webp" alt="Hermes Agent logo" width="400" height="269">
+    </section>
+
+    <section id="now-server">
+        <h2>The Server Behind It</h2>
+        <p>All of it runs on one mini PC-turned-server: an AMD Ryzen 7 6800U with 24 GB of RAM running Ubuntu.
+            Staying on a single machine keeps the whole setup cheap and gives me one place to patch, back up, and
+            reason about. It works a second job as my DNS and media box.</p>
+
+        <h3>Services &amp; Tools</h3>
+        <ul class="service-list">
+            <li>
+                <span class="honor-name">Docker</span>
+                <p class="honor-desc">Every service runs in its own container, defined by a Compose file, so I can rebuild or replace one
+                    without disturbing the rest of the machine.</p>
+            </li>
+            <li>
+                <span class="honor-name">Ubuntu</span>
+                <p class="honor-desc">The host operating system. Security updates install unattended on a weekly schedule, and the machine
+                    reboots itself afterward.</p>
+            </li>
+            <li>
+                <span class="honor-name">Pi-hole</span>
+                <p class="honor-desc">Network-wide DNS filtering, so ad and tracker domains are blocked for every device on the network
+                    without configuring each one.</p>
+            </li>
+            <li>
+                <span class="honor-name">Jellyfin</span>
+                <p class="honor-desc">My own media server. It streams the films and shows I already own to the TV, phone, and browser, with
+                    no subscription involved.</p>
+            </li>
+            <li>
+                <span class="honor-name">SearXNG</span>
+                <p class="honor-desc">A self-hosted search instance. The agent's web searches go through it rather than a commercial API, so
+                    queries aren't tied to an account.</p>
+            </li>
+            <li>
+                <span class="honor-name">Tailscale</span>
+                <p class="honor-desc">A private mesh network that makes the server reachable from my phone and laptop while I'm away from
+                    home, without opening a port to the internet.</p>
+            </li>
+            <li>
+                <span class="honor-name">Hermes</span>
+                <p class="honor-desc">The agent itself: a service that connects the assistant to my files, the shell, a browser, and
+                    Telegram, and runs the scheduled jobs.</p>
+            </li>
+            <li>
+                <span class="honor-name">Ollama</span>
+                <p class="honor-desc">Runs language models locally on the CPU, so smaller tasks stay on my own hardware instead of going out
+                    to a hosted API.</p>
+            </li>
+        </ul>
+
+        <p>Everything is defined in Docker Compose files, so a service is a configuration change rather than a manual
+            install. Nothing is exposed to the public internet: remote access goes through a private mesh network, and
+            each service serves HTTPS from a locally issued certificate authority I trust on my own devices.</p>
+        <p>Keeping it healthy is its own project. Updates install unattended on a weekly schedule and the machine
+            reboots itself afterward, which only works because the update routine reports back over Telegram before
+            it goes down. Local models run on CPU, so I keep them small and the context window modest; working out
+            where that ceiling actually sits is an ongoing experiment.</p>
+    </section>
+
+    <section id="now-next">
+        <h2>What's Next</h2>
+        <ul>
+            <li>Extending the agent's automation to cover more of my routine repository and server maintenance.</li>
+            <li>Build a PC that can run more powerful models locally.</li>
+            <li>Turning this page itself into a habit, updating it as the focus shifts rather than at the end of a
+                project.</li>
+        </ul>
+    </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="copyright-year">2026</span> Caden Otis &nbsp;|&nbsp; <a href="mailto:cadenotis@gmail.com">cadenotis@gmail.com</a></p>
+        <!--
+            Social profile links (GitHub + LinkedIn), shown in the footer of every page.
+            target="_blank"           -> open the profile in a new tab so visitors keep their
+                                         place on this site instead of navigating away.
+            rel="noopener noreferrer" -> safety hardening for target="_blank":
+                noopener   blocks the new tab from reaching back into this page via window.opener
+                           (prevents "reverse tabnabbing", where the opened page could redirect
+                           this tab to a phishing look-alike).
+                noreferrer stops this page's URL being sent to the destination as the Referer
+                           header (also implies noopener). Modern browsers add noopener
+                           automatically; it is kept explicit for older browsers.
+            aria-label on each <a> -> spoken name for screen readers, since a link containing only
+                           an icon has no visible text to announce.
+            How the icons work: the logo shapes come from the open, public-domain (CC0) "Simple Icons" brand
+            set and are embedded inline as SVG vector paths on a 24x24 grid, rather than loaded as
+            image files. The browser draws them as vectors, so they stay sharp at any zoom and cost
+            no extra network request. fill="currentColor" makes each inherit the footer's white
+            text color, and the rendered size is set by .footer-icon in style.css. To change a
+            profile, edit its href below.
+        -->
+        <nav class="footer-social" aria-label="Social profiles">
+            <a href="https://github.com/cadenrotis" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                <svg class="footer-icon" role="img" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/cadenotis" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                <svg class="footer-icon" role="img" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+        </nav>
+    </footer>
+    <script src="./site.js"></script>
+</body>
+
+</html>

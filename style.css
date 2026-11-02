@@ -25,11 +25,22 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    /* Wrap as a group whenever the links no longer fit. Without this the
+       default flex-shrink squeezes the links instead, which stacks a
+       multi-word label onto several lines and can push a horizontal
+       scrollbar onto the page. */
+    flex-wrap: wrap;
+    /* Breathing room between wrapped rows, since the underline bar hangs
+       4px below each link. */
+    row-gap: 6px;
     justify-content: center;
 }
 
 nav li {
     margin: 0 20px;
+    /* Keep each link at its natural width so the row wraps instead of
+       squashing the label. */
+    flex-shrink: 0;
 }
 
 nav a {
@@ -366,6 +377,60 @@ main.page-center {
     margin-bottom: 24px;
 }
 
+/* --- What I'm Working On page ---
+   Mirrors the Education page: several subsections share one centred column,
+   and only the first keeps its top gutter. */
+#now,
+#now-assistant,
+#now-server,
+#now-next {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+#now-assistant,
+#now-server,
+#now-next {
+    padding-top: 0;
+}
+
+#now h2,
+#now-assistant h2,
+#now-server h2,
+#now-next h2 {
+    margin-bottom: 24px;
+}
+
+/* The logo sits at the bottom of its section, like the Education page's
+   wordmark: centred, at its natural aspect ratio, scaling down with the
+   column. Capped rather than stretched to the column so it stays logo-sized
+   beside the text, and left without a border because it is a logo rather
+   than a photograph. */
+#now-assistant > img {
+    display: block;
+    height: auto;
+    margin: 16px auto 0;
+    max-width: min(400px, 100%);
+}
+
+/* Service descriptions, laid out two-up so the list reads as a set of cards
+   rather than a wall of bullets. Each card keeps the site's left-border card
+   look and the description typography already used on the Education page. */
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.service-list li {
+    border-left: 3px solid #333;
+    padding: 10px 16px;
+}
+
 .education-entry {
     border-left: 3px solid #333;
     padding: 12px 20px;
@@ -652,14 +717,15 @@ body.is-scrolled #back-to-top {
     border: 0;
 }
 /* --- Responsive layout (mobile) ---
-   Below 700px the nav wraps and tightens so all six links stay visible
+   Below 700px the nav tightens (and, from the base rule, wraps) so all eight
+   links stay visible
    instead of overflowing off-screen; the other breakpoints trim content
    padding and stack the two-column galleries on small phones. */
 @media (max-width: 700px) {
     nav ul {
-        flex-wrap: wrap;
+        /* Wrapping and the row gap live on the base rule now; this only
+           drops the UA's default indent so the links centre properly. */
         padding: 0;
-        row-gap: 6px;
     }
 
     nav li {
@@ -687,7 +753,8 @@ body.is-scrolled #back-to-top {
 @media (max-width: 560px) {
     .project-gallery,
     .job-gallery,
-    .activity-gallery {
+    .activity-gallery,
+    .service-list {
         grid-template-columns: 1fr;
     }
 
@@ -725,10 +792,12 @@ body.is-scrolled #back-to-top {
     }
 }
 
-/* Very small phones: keep the nav on as few lines as possible. */
+/* Very small phones: keep the nav on as few lines as possible. The tighter
+   side margin is what keeps the eight links on two rows at 320px - at 7px
+   the last link is a few pixels short and spills onto a third. */
 @media (max-width: 380px) {
     nav li {
-        margin: 0 7px;
+        margin: 0 5px;
     }
 
     nav a {
