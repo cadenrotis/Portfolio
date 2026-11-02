@@ -9,6 +9,7 @@ This website use directory-based clean URLs (no `.html` at the end of URL on eac
 | Page | URL | Description |
 |------|-----|-------------|
 | Home | `/` (root `index.html`) | Landing page with hero section, intro, and quick-link guide cards to each section |
+| What I'm Working On | `/now/` | Current projects, including the self-hosted AI assistant and the home server behind it |
 | Experience | `/experience/` | Work history at Rice Lake Weighing Systems and John Deere |
 | Skills | `/skills/` | Technical skills organized into categories (languages, web tech, tools, hardware) |
 | Projects | `/projects/` | Projects from coursework and personal work (portfolio, Wordle, temp sensor, processor, Roomba) |
