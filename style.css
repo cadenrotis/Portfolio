@@ -402,6 +402,18 @@ main.page-center {
     margin-bottom: 24px;
 }
 
+/* The logo sits at the bottom of its section, like the Education page's
+   wordmark: centred, at its natural aspect ratio, scaling with the column.
+   It is capped because the file is square with a lot of its own padding, so
+   at full column width it would read as a mostly-empty block. A logo sits on
+   transparency, so it takes no photo border. */
+#now-assistant > img {
+    display: block;
+    height: auto;
+    margin: 16px auto 0;
+    max-width: min(400px, 100%);
+}
+
 .education-entry {
     border-left: 3px solid #333;
     padding: 12px 20px;
