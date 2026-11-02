@@ -9,12 +9,12 @@ This website use directory-based clean URLs (no `.html` at the end of URL on eac
 | Page | URL | Description |
 |------|-----|-------------|
 | Home | `/` (root `index.html`) | Landing page with hero section, intro, and quick-link guide cards to each section |
-| What I'm Working On | `/now/` | Current projects, including the self-hosted AI assistant and the home server behind it |
 | Experience | `/experience/` | Work history at Rice Lake Weighing Systems and John Deere |
 | Skills | `/skills/` | Technical skills organized into categories (languages, web tech, tools, hardware) |
 | Projects | `/projects/` | Projects from coursework and personal work (portfolio, Wordle, temp sensor, processor, Roomba) |
 | Education | `/education/` | Education and coursework, academic honors and awards, and college activities |
 | Resume | `/resume/` | Resume shown in an embedded PDF viewer, with a link to open or download the PDF |
+| What I'm Working On | `/now/` | Current projects, including the self-hosted AI assistant and the home server behind it |
 | Contact | `/contact/` | Contact info including email, LinkedIn, and GitHub |
 | 404 | `/404.html` | Custom 404 page with compass icon and link back to homepage |
 
