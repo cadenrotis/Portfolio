@@ -366,6 +366,31 @@ main.page-center {
     margin-bottom: 24px;
 }
 
+/* --- What I'm Working On page ---
+   Mirrors the Education page: several subsections share one centred column,
+   and only the first keeps its top gutter. */
+#now,
+#now-assistant,
+#now-server,
+#now-next {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+#now-assistant,
+#now-server,
+#now-next {
+    padding-top: 0;
+}
+
+#now h2,
+#now-assistant h2,
+#now-server h2,
+#now-next h2 {
+    margin-bottom: 24px;
+}
+
 .education-entry {
     border-left: 3px solid #333;
     padding: 12px 20px;
