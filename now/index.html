@@ -84,8 +84,8 @@
                 the agent loads when a matching task comes up. An update routine or a change to this site then runs
                 the same way every time instead of being worked out from scratch.</li>
         </ul>
-        <p>The interesting part isn't the model, it's the engineering around it: permissions, scheduled jobs, and
-            keeping an agent with shell access pointed at the things it should touch and nothing else.</p>
+        <p>The interesting part isn't the model, it's the engineering around it: permissions, scheduled jobs, and the 
+            ability to interact with the system in a natural way.</p>
         <img src="./images/hermes_agent.webp" alt="Hermes Agent logo" width="400" height="269">
     </section>
 
@@ -144,8 +144,9 @@
             anywhere without being exposed to the internet, and the agent and its models run on hardware I own. Each service serves
             HTTPS from a certificate authority I issued myself.</p>
         <p>Keeping it healthy is its own project. Updates install unattended on a weekly schedule and the machine
-            reboots itself afterward, which only works because the update routine reports back over Telegram before
-            it goes down. Local models run on CPU, so I keep them small and the context window modest; working out
+            reboots itself afterward, which I then receive a report on through a Telegram message that summarizes what was updated and 
+            whether the reboot succeeded. 
+            Local models run on CPU, so I keep them small and the context window modest; working out
             where that ceiling actually sits is an ongoing experiment.</p>
     </section>
 
