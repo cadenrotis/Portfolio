@@ -25,11 +25,22 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    /* Wrap as a group whenever the links no longer fit. Without this the
+       default flex-shrink squeezes the links instead, which stacks a
+       multi-word label onto several lines and can push a horizontal
+       scrollbar onto the page. */
+    flex-wrap: wrap;
+    /* Breathing room between wrapped rows, since the underline bar hangs
+       4px below each link. */
+    row-gap: 6px;
     justify-content: center;
 }
 
 nav li {
     margin: 0 20px;
+    /* Keep each link at its natural width so the row wraps instead of
+       squashing the label. */
+    flex-shrink: 0;
 }
 
 nav a {
@@ -682,9 +693,9 @@ body.is-scrolled #back-to-top {
    padding and stack the two-column galleries on small phones. */
 @media (max-width: 700px) {
     nav ul {
-        flex-wrap: wrap;
+        /* Wrapping and the row gap live on the base rule now; this only
+           drops the UA's default indent so the links centre properly. */
         padding: 0;
-        row-gap: 6px;
     }
 
     nav li {
