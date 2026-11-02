@@ -761,10 +761,12 @@ body.is-scrolled #back-to-top {
     }
 }
 
-/* Very small phones: keep the nav on as few lines as possible. */
+/* Very small phones: keep the nav on as few lines as possible. The tighter
+   side margin is what keeps the eight links on two rows at 320px - at 7px
+   the last link is a few pixels short and spills onto a third. */
 @media (max-width: 380px) {
     nav li {
-        margin: 0 7px;
+        margin: 0 5px;
     }
 
     nav a {
